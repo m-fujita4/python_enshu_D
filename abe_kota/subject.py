@@ -7,14 +7,14 @@ eng=int(args[3])
 
 sum=math+jap+eng
 
-if (math>=70 and jap>=70 and eng>=70) or (sum>=220) and math>50 and jap>50 and eng>50  :
-    print("合格")
+if (math>=70 and jap>=70 and eng>=70) or sum>=220 : 
+    print("合格",end="")
 
 
-#elif math>=50 and jap>=50 and eng>=50:
- #   print("合格")
+if (math<50 or jap<50 or eng<50):
+    print("不合格",end="")
 
 
 else:
-    print("不合格")
+    print("不合格",end="")
     
