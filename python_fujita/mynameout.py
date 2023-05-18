@@ -6,10 +6,9 @@ def main():
 
     # substitute args to var
     name = args[1]
-    print(args[0])
 
     # aaa
-    print(f"Hello, {name}!")
+    print(f"Hello {name} !", end='')
 
 
 if __name__ == '__main__':
