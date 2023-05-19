@@ -1,5 +1,3 @@
-from decimal import Decimal , ROUND_HALF_UP
-
 import sys
 args = sys.argv
 
