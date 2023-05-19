@@ -13,7 +13,6 @@ else:
     #tax_rate=salary*0.1
     tax=salary*0.1
 
-
 tax=Decimal(str(tax)).quantize(Decimal("0"),rounding=ROUND_HALF_UP)
 
 pay_amount=salary-tax
