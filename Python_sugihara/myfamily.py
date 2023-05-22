@@ -1,4 +1,5 @@
 import sys
+#モジュールのインポート
 import introduce
 args = sys.argv
 input1 = str(args[1])
