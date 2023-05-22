@@ -13,4 +13,3 @@ def calcvalue(num):
 
 for num in range(1,len(sys.argv)):
     calcvalue(int(args[num]))
-    num += 1
