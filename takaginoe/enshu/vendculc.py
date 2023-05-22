@@ -45,8 +45,8 @@ def ask_drink(drink, money):
     elif drink in vend_machine:
         calc(drink, int(money))
     else:
-        print("error")
-        sys.exit()
+        print("error：商品名を入力してください")
+        ask_drink(drink, money)
 
 # aaa
 def calc(drink, money):
@@ -72,4 +72,5 @@ def calc_change(change):
         change = change % money
         print('{}円：{}枚'.format(money, change_money))
 
+print(vend_machine)
 ask_money()
