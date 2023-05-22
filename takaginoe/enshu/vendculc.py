@@ -17,25 +17,12 @@ money = 0 # 初期値
 drink = "" # 初期値
 low = min(vend_machine.values()) # lowest price
 
+# input money(pay)
 def ask_money():
-    # amount(pay)
     money = input("お金を投入してください")
     amount_judge(int(money))
     ask_drink(drink, int(money))
 
-# input
-def ask_drink(drink, money):
-    # ask drink    
-    drink = input("何を購入しますか（商品名/cancel)")
-    if drink == "cancel":
-        calc_change(money)
-        sys.exit()
-    elif drink in vend_machine:
-        calc(drink, int(money))
-    else:
-        print("error")
-        sys.exit()
-    
 # make sure the amount input is correct
 def amount_judge(money):
     tmp_money = str(money)
@@ -47,8 +34,20 @@ def amount_judge(money):
     elif tmp_money[-1] != "0":
         print("1円玉、5円玉は使用できません。再度投入金額を入力してください")
         ask_money()
+
+# input
+def ask_drink(drink, money):
+    # ask drink    
+    drink = input("何を購入しますか（商品名/cancel)")
+    if drink == "cancel":
+        calc_change(money)
+        sys.exit()
+    elif drink in vend_machine:
+        calc(drink, int(money))
     else:
-        return 0
+        print("error：商品名を入力してください")
+        ask_drink(drink, money)
+
 # aaa
 def calc(drink, money):
     cost = vend_machine[drink]
@@ -63,7 +62,7 @@ def calc(drink, money):
     elif money < low:
         calc_change(money)
     elif money == 0:
-        exit
+        sys.exit()
 
 # calc num of change
 def calc_change(change):
@@ -73,4 +72,5 @@ def calc_change(change):
         change = change % money
         print('{}円：{}枚'.format(money, change_money))
 
+print(vend_machine)
 ask_money()
