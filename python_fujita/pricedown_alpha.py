@@ -21,12 +21,10 @@ def main():
         '果物類': fruits, '酒類': sake, '麺類': noodle
         }
 
-    for category, list in view.items():
-        if args.category == category:
-            for key in list:
-                hinmoku[key] -= args.pricecut
-                if hinmoku[key] < 1:
-                    hinmoku[key] = 1
+    for key in view[args.category]:
+        hinmoku[key] -= args.pricecut
+        if hinmoku[key] < 1:
+            hinmoku[key] = 1
 
     print(hinmoku, end='')
 
