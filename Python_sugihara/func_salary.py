@@ -1,4 +1,4 @@
-#支給額と税額の計算
+#支給額と税額の計算関数
 def cacsalary(salary):
     if(salary>=1000000):
         tax = int((salary-1000000) * 0.2 + 100000)
