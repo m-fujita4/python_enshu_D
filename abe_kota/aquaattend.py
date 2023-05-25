@@ -39,13 +39,11 @@ else:
     adult=adults,
     child=children
     )
-
 """
 if seq_count > 1:
     new_seq=session.query(Attendnum).filter_by(seq=seq_count).first()
     new_seq.seq=seq_count+1
 """
-
     
 """
 entry_date=session.query(Attendnum.entry_date).all()
@@ -65,7 +63,6 @@ if entry_date==date(year,month,day):
     child=children
 )   
 """
-
 
 session.add(attendnum)
 session.commit()
