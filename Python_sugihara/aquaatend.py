@@ -22,6 +22,6 @@ guest =Guest(
      adult = input2 ,
      child = input3
 )
-
+#保存
 session.add(guest)
 session.commit()
