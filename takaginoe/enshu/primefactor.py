@@ -7,9 +7,7 @@ def primefactor(n):
     tmp = n
     for i in range (2, int(n*0.5//1-1)):
         if tmp % i == 0:
-            cnt = 0
             while tmp % i == 0:
-                cnt += 1
                 tmp //= i
                 ans.append(i)
     if ans==[]:
